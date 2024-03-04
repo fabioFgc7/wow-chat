@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background: #2c394b;
+  color: #fff;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* Establecer estilos específicos para navegadores WebKit (Chrome, Safari) */
+
+#chat-container::-webkit-scrollbar-thumb {
+  background: #121212;
+  position: absolute;
+  border-radius: 6px;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* #album::-webkit-scrollbar-track {
+  background: #121212;
+}
+*/
+
+#chat-container::-webkit-scrollbar-thumb {
+  background: #212121;
+  border-radius: 6px;
+}
+
+#chat-container::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+#chat-container:hover > #chat-container::-webkit-scrollbar-thumb {
+  background-color: #444;
+}
+
+.chat-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-bubble {
+  background-color: #dcf8c6;
+  border-radius: 20px;
+  max-width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.chat-bubble::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.chat-bubble.sent::after {
+  border-width: 8px 10px 8px 0;
+  border-color: transparent #dcf8c6 transparent transparent;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.chat-text {
+  font-size: 16px;
+}
